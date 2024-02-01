@@ -1,24 +1,20 @@
 package db;
 
-import model.User;
+import model.Staff;
 
 import java.util.ArrayList;
 
 public class DBManager {
-    public static ArrayList<User> userArrayList = new ArrayList<>();
+    public static ArrayList<Staff> staffArrayList = new ArrayList<>();
 
     static {
-        userArrayList.add(new User("Zhansaya", "Kulbaeva"));
-        userArrayList.add(new User("Nazar", "Kabylov"));
-        userArrayList.add(new User("Zhaksylyk", "Kasymbek"));
-        userArrayList.add(new User("Madiyar", "Serik"));
+        staffArrayList.add(new Staff("Ilyas", "Zhuanyshev", "IT", 55000));
+        staffArrayList.add(new Staff("Aybek", "Bagit", "Management", 65000));
+        staffArrayList.add(new Staff("Alibek", "Serikov", "HR", 35000));
+        staffArrayList.add(new Staff("Serzhan", "Berikov", "IT", 80000));
     }
 
-    public static ArrayList<User> getUsers(){
-        return userArrayList;
-    }
-
-    public static void addUser(User user){
-        userArrayList.add(user);
+    public static ArrayList<Staff> getAllStaff(){
+        return staffArrayList;
     }
 }
