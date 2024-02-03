@@ -1,20 +1,28 @@
 package db;
 
-import model.Staff;
+import model.Item;
 
 import java.util.ArrayList;
 
 public class DBManager {
-    public static ArrayList<Staff> staffArrayList = new ArrayList<>();
+    public static ArrayList<Item> items = new ArrayList<>();
 
     static {
-        staffArrayList.add(new Staff("Ilyas", "Zhuanyshev", "IT", 55000));
-        staffArrayList.add(new Staff("Aybek", "Bagit", "Management", 65000));
-        staffArrayList.add(new Staff("Alibek", "Serikov", "HR", 35000));
-        staffArrayList.add(new Staff("Serzhan", "Berikov", "IT", 80000));
+        items.add(new Item(1L, "Iphone 13Pro Max", 450000, 30));
+        items.add(new Item(2L, "Iphone 14ProMax", 500000, 9));
+        items.add(new Item(3L, "Iphone 15ProMax", 600000, 50));
     }
 
-    public static ArrayList<Staff> getAllStaff(){
-        return staffArrayList;
+    public static ArrayList<Item> getItems(){
+        return items;
+    }
+
+    public static Item getItemById(Long id){
+        for(Item item : items){
+            if (item.getId()==id){
+                return item;
+            }
+        }
+        return null;
     }
 }
